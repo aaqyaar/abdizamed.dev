@@ -1,9 +1,9 @@
 "use client";
 
-import { useScrollDown } from "lib/hooks";
+import { useScrollDown, useTheme } from "lib/hooks";
 import Link from "next/link";
 import React, { useState } from "react";
-import { HiMenu } from "react-icons/hi";
+import { HiMenu, HiSun, HiMoon } from "react-icons/hi";
 import { FaGithub, FaFacebook, FaLinkedin, FaBlogger } from "react-icons/fa";
 
 interface NavType {
@@ -15,21 +15,35 @@ interface NavType {
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const isScrolledtoDown = useScrollDown(50);
   return (
     <header
-      className={` sticky top-0 z-50 max-w-full bg-gray-900 py-5 px-5  ${
-        isScrolledtoDown && "shadow shadow-green-500"
+      className={` sticky top-0 z-50 max-w-full bg-white py-5 px-5 dark:bg-gray-900  ${
+        isScrolledtoDown && "shadow shadow-gray-50 dark:shadow-green-500"
       }`}
     >
       <div className="mx-auto flex max-w-[1240px] items-center justify-between">
         <div id="brand">
-          <h1 className="ml-2 text-2xl font-bold text-green-600">
+          <h1 className="ml-2 text-2xl font-bold text-gray-900 dark:text-green-900">
             Abdi Zamed Mohamed
           </h1>
         </div>
         <nav id="nav-links" className="flex items-center">
           {desktopNav()}
+          <div className="ml-4 flex items-center">
+            <button
+              className="rounded-md bg-gray-900 p-1 text-gray-100 outline outline-offset-2 outline-gray-900 dark:text-white dark:outline-white"
+              aria-label="toggle dark mode"
+              onClick={() => toggleTheme()}
+            >
+              {theme === "light" ? (
+                <HiMoon className="h-6 w-6" aria-label="toggle dark mode" />
+              ) : (
+                <HiSun className="h-6 w-6" aria-label="toggle light mode" />
+              )}
+            </button>
+          </div>
           <div className="ml-4 inline-flex items-center lg:hidden">
             <button
               className="rounded-md p-2 text-green-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-600 hover:bg-green-500 hover:text-green-200"
@@ -48,7 +62,7 @@ export default function Header() {
 const RenderNav = ({ title, path, icon, target }: NavType) => {
   return (
     <li
-      className={`text-md font-xl flex items-center gap-1 px-4 py-2 ${"text-green-100 hover:text-green-600"}
+      className={`text-md font-xl flex items-center gap-1 px-4 py-2 ${"text-gray-900 hover:text-gray-800 dark:text-green-100 dark:hover:text-green-600"}
     `}
     >
       <> {icon}</>

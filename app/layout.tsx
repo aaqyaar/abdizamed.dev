@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html>
       <head />
-      <body className="snap-scroll-y scrollbar-base bg-gray-900">
+      <body className="snap-scroll-y scrollbar-base dark:bg-gray-900">
         <Header />
         <main className="overflow-x-hidden">{children}</main>
         <Footer />
