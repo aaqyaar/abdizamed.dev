@@ -9,6 +9,7 @@ interface NavType {
   title: string;
   path: string;
   current: boolean;
+  anotherPage?: boolean;
 }
 
 export default function Header() {
@@ -48,11 +49,13 @@ const RenderNav = ({ title, path, current }: NavType) => {
     <li>
       <Link
         href={path}
-        className={`text-md inline-flex px-3 py-2 font-medium ${
+        className={`text-md inline-flex items-center px-3 py-2 font-medium ${
           current
             ? "rounded-none border-b-0 border-green-600 text-green-600 md:border-b-2"
             : "text-green-100 hover:text-green-600"
-        }`}
+        } 
+        
+        `}
       >
         {title}
       </Link>
@@ -74,11 +77,11 @@ const mobileNav = ({ open }: { open: boolean }) => {
   return (
     <div className="block md:hidden">
       <div
-        className={`absolute inset-x-0 ${
+        className={`absolute inset-x-0 z-50 my-7 mr-6 ml-2 rounded-lg bg-gray-800 ${
           open && "translate-y-0"
         } transform p-2 transition duration-300 ease-in-out`}
       >
-        <ul className="flex flex-col  items-start p-5">
+        <ul className="flex flex-col items-start p-5">
           {navigation.map((nav: NavType) => (
             <RenderNav key={nav.title} {...nav} />
           ))}
@@ -89,8 +92,10 @@ const mobileNav = ({ open }: { open: boolean }) => {
 };
 
 const navigation: NavType[] = [
-  { title: "Home", path: "#", current: false },
-  { title: "About", path: "#", current: false },
-  { title: "Projects", path: "#", current: false },
-  { title: "Contact", path: "#", current: false },
+  // { title: "Home", path: "#", current: false },
+  // { title: "About", path: "#about", current: false },
+  // { title: "Projects", path: "#projects", current: false },
+  // { title: "Contact", path: "#contact", current: false },
+  { title: "Blogs", path: "/blogs", current: false },
+  { title: "Github", path: "https://github.com/abdi-aaqyaar", current: false },
 ];
