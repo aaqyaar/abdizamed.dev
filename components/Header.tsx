@@ -1,5 +1,6 @@
 "use client";
 
+import { useScrollDown } from "lib/hooks";
 import Link from "next/link";
 import React, { useState } from "react";
 import { HiMenu } from "react-icons/hi";
@@ -12,9 +13,13 @@ interface NavType {
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const isScrolledtoDown = useScrollDown(50);
   return (
-    <header className="max-w-full py-5 px-5 shadow shadow-green-500 md:px-0 md:shadow-none">
+    <header
+      className={`max-w-full bg-gray-900 py-5 px-5  ${
+        isScrolledtoDown && "sticky top-0 z-50 shadow shadow-green-500"
+      }`}
+    >
       <div className="mx-auto flex max-w-[1240px] items-center justify-between">
         <div id="brand">
           <h1 className="ml-2 text-2xl font-bold text-green-600">
@@ -25,7 +30,7 @@ export default function Header() {
           {desktopNav()}
           <div className="ml-4 inline-flex items-center lg:hidden">
             <button
-              className="rounded-md p-2 text-green-600 hover:bg-green-500 hover:text-green-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-600"
+              className="rounded-md p-2 text-green-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-600 hover:bg-green-500 hover:text-green-200"
               onClick={() => setIsOpen(!isOpen)}
             >
               <HiMenu className="h-6 w-6" aria-hidden="true" />
@@ -84,7 +89,7 @@ const mobileNav = ({ open }: { open: boolean }) => {
 };
 
 const navigation: NavType[] = [
-  { title: "Home", path: "#", current: true },
+  { title: "Home", path: "#", current: false },
   { title: "About", path: "#", current: false },
   { title: "Projects", path: "#", current: false },
   { title: "Contact", path: "#", current: false },

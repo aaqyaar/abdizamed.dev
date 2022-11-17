@@ -13,4 +13,15 @@
     scroll-behavior: smooth;
     font-family: "Inter";
   }
+
+  .snap-scroll-y {
+    @apply snap-y  snap-mandatory overflow-y-scroll;
+  }
+  .snap-scroll-x {
+    @apply snap-x snap-mandatory overflow-x-scroll;
+  }
+
+  .scrollbar-base {
+    @apply scrollbar scrollbar-track-gray-800 scrollbar-thumb-green-500 scrollbar-track-rounded-md scrollbar-thumb-rounded-md;
+  }
 }
