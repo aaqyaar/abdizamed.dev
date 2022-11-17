@@ -30,6 +30,7 @@ export default function Project({
           className="h-72 w-full rounded-lg object-cover object-center"
           width={192}
           height={192}
+          quality={100}
         />
       </div>
       <div id="content">

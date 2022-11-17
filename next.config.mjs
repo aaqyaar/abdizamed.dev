@@ -11,6 +11,9 @@ const config = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ["avatars.githubusercontent.com"],
+  },
   i18n: {
     locales: ["en"],
     defaultLocale: "en",

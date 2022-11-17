@@ -37,11 +37,11 @@ const projects: Project[] = [
   },
 
   {
-    id: 1,
-    title: "E-commerce Application",
+    id: 3,
+    title: "Porfolio Website",
     description:
-      "An E-commerce Application built with Nextjs, React, Redux, Tailwindcss, and Firebase.",
-    image: "/images/abdi.png",
+      "A Porfolio Website built with Nextjs, React, Redux, Tailwindcss, and Firebase.",
+    image: "/images/portfolio.png",
     github: "https://www.github.com/abdi-aaqyaar/ecommerce",
     live: "https://ecommerce-aaqyaar.vercel.app/",
     technologies: ["React JS", "Next JS", "Redux", "Tailwind CSS", "Firebase"],
