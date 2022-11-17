@@ -16,8 +16,8 @@ export default function Header() {
   const isScrolledtoDown = useScrollDown(50);
   return (
     <header
-      className={`max-w-full bg-gray-900 py-5 px-5  ${
-        isScrolledtoDown && "sticky top-0 z-50 shadow shadow-green-500"
+      className={` sticky top-0 z-50 max-w-full bg-gray-900 py-5 px-5  ${
+        isScrolledtoDown && "shadow shadow-green-500"
       }`}
     >
       <div className="mx-auto flex max-w-[1240px] items-center justify-between">
