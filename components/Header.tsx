@@ -25,7 +25,7 @@ export default function Header() {
     >
       <div className="mx-auto flex max-w-[1240px] items-center justify-between">
         <div id="brand">
-          <h1 className="ml-2 text-2xl font-bold text-gray-900 dark:text-green-900">
+          <h1 className="ml-2 text-2xl font-bold text-gray-900 dark:text-green-600">
             Abdi Zamed Mohamed
           </h1>
         </div>
