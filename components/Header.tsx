@@ -4,12 +4,13 @@ import { useScrollDown } from "lib/hooks";
 import Link from "next/link";
 import React, { useState } from "react";
 import { HiMenu } from "react-icons/hi";
+import { FaGithub, FaFacebook, FaLinkedin, FaBlogger } from "react-icons/fa";
 
 interface NavType {
   title: string;
   path: string;
-  current: boolean;
-  anotherPage?: boolean;
+  icon?: React.ReactNode;
+  target?: string;
 }
 
 export default function Header() {
@@ -44,19 +45,14 @@ export default function Header() {
   );
 }
 
-const RenderNav = ({ title, path, current }: NavType) => {
+const RenderNav = ({ title, path, icon, target }: NavType) => {
   return (
-    <li>
-      <Link
-        href={path}
-        className={`text-md inline-flex items-center px-3 py-2 font-medium ${
-          current
-            ? "rounded-none border-b-0 border-green-600 text-green-600 md:border-b-2"
-            : "text-green-100 hover:text-green-600"
-        } 
-        
-        `}
-      >
+    <li
+      className={`text-md font-xl flex items-center gap-1 px-4 py-2 ${"text-green-100 hover:text-green-600"}
+    `}
+    >
+      <> {icon}</>
+      <Link href={path} target={target}>
         {title}
       </Link>
     </li>
@@ -92,10 +88,27 @@ const mobileNav = ({ open }: { open: boolean }) => {
 };
 
 const navigation: NavType[] = [
-  // { title: "Home", path: "#", current: false },
-  // { title: "About", path: "#about", current: false },
-  // { title: "Projects", path: "#projects", current: false },
-  // { title: "Contact", path: "#contact", current: false },
-  { title: "Blogs", path: "/blogs", current: false },
-  { title: "Github", path: "https://github.com/abdi-aaqyaar", current: false },
+  {
+    title: "Blogs",
+    path: "/blogs",
+    icon: <FaBlogger className="h-5 w-5" />,
+  },
+  {
+    title: "Github",
+    path: "https://github.com/abdi-aaqyaar",
+    icon: <FaGithub className="h-5 w-5" />,
+    target: "_blank",
+  },
+  {
+    title: "Linkedin",
+    path: "https://www.linkedin.com/in/abdi-zamed-mohamed-aaqyaar/",
+    icon: <FaLinkedin className="h-5 w-5" />,
+    target: "_blank",
+  },
+  {
+    title: "Facebook",
+    path: "https://facebook.com/abdi_aaqaar",
+    icon: <FaFacebook className="h-5 w-5" />,
+    target: "_blank",
+  },
 ];
