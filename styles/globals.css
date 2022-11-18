@@ -22,7 +22,7 @@
   }
 
   .scrollbar-base {
-    @apply scrollbar scrollbar-track-gray-800 scrollbar-thumb-green-500 scrollbar-track-rounded-md scrollbar-thumb-rounded-md;
+    @apply scrollbar scrollbar-track-gray-50 scrollbar-thumb-green-500 scrollbar-track-rounded-md scrollbar-thumb-rounded-md dark:scrollbar-track-gray-800;
   }
 
   .textfield {

@@ -4,7 +4,7 @@ import { AiOutlineSmallDash } from "react-icons/ai";
 export default function About() {
   return (
     <section className="w-screen bg-white dark:bg-gray-900">
-      <div className="mx-auto max-w-screen-xl py-8 px-4 lg:py-16 xl:py-20">
+      <div className="mx-10 py-8 px-4 lg:mx-auto lg:max-w-screen-xl lg:py-16 xl:py-20">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           <div className="col-span-12 lg:col-span-6">
             {/* hyphen -  */}

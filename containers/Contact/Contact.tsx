@@ -1,3 +1,6 @@
+"use client";
+
+import { type TContact } from "lib/types/contact.types";
 import Image from "next/image";
 import React from "react";
 import {
@@ -7,9 +10,27 @@ import {
 } from "react-icons/ai";
 
 export default function Contact() {
+  const [values, setValues] = React.useState<TContact>({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log("submit");
+  };
+
   return (
     <div className="w-screen bg-white dark:bg-gray-900">
-      <div className="mx-auto max-w-[1240px] py-10">
+      <div className="mx-10 py-10 lg:mx-auto lg:max-w-screen-xl">
         {/* contact form with name, email, phone, subject, message */}
         <AiOutlineSmallDash className="text-4xl text-green-600" />
         <h2 className="text-3xl font-bold text-gray-900 dark:text-green-600">
@@ -52,8 +73,7 @@ export default function Contact() {
           </div>
           <div className="col-span-2">
             <form
-              action="https://formspree.io/f/xwkrgzpr"
-              method="POST"
+              onSubmit={handleSubmit}
               className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
             >
               <div className="col-span-2">
@@ -136,7 +156,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   className="cursor-pointer rounded-md bg-green-600 px-4 py-2 text-white hover:bg-green-500"
-                  disabled
+                  disabled={false}
                 >
                   Send
                 </button>

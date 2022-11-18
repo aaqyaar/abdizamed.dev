@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
-import { HiCode } from "react-icons/hi";
+import { TbWorld } from "react-icons/tb";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -56,8 +56,8 @@ export default function Project({
             href={live}
             className="mr-4 flex items-center text-green-600 dark:text-green-400"
           >
-            <HiCode className="h-7 w-7 pr-2 " />
-            View
+            <TbWorld className="h-7 w-7 pr-2 " />
+            Live
           </Link>
 
           <Link

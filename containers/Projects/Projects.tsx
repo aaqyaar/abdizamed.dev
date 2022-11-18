@@ -51,7 +51,7 @@ const projects: Project[] = [
 export default function Projects() {
   return (
     <section className="w-screen bg-white dark:bg-gray-900">
-      <div className="mx-auto max-w-[1240px] py-10">
+      <div className="mx-10 py-10 lg:mx-auto lg:max-w-screen-xl">
         <AiOutlineSmallDash className="text-4xl text-green-600" />
 
         <h2 className="text-3xl font-bold text-gray-900 dark:text-green-600">
