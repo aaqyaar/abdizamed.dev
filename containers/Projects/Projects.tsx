@@ -60,7 +60,7 @@ export default function Projects() {
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <div
-              className="rounded-lg bg-white shadow-lg dark:bg-gray-800"
+              className="rounded-lg bg-white shadow-lg shadow-gray-100 dark:bg-gray-800 dark:shadow-gray-900"
               key={project.id}
             >
               <div className="p-4">

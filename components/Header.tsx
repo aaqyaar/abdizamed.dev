@@ -25,7 +25,7 @@ export default function Header() {
     >
       <div className="mx-auto flex max-w-[1240px] items-center justify-between">
         <div id="brand">
-          <h1 className="ml-2 text-2xl font-bold text-gray-900 dark:text-green-600">
+          <h1 className="ml-2 text-2xl font-bold text-green-600">
             Abdi Zamed Mohamed
           </h1>
         </div>
@@ -36,6 +36,7 @@ export default function Header() {
               className="rounded-md  p-1 text-green-600 outline outline-offset-2 outline-green-700 dark:bg-transparent dark:text-green-500 dark:outline-green-500"
               aria-label="toggle dark mode"
               onClick={() => toggleTheme()}
+              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
             >
               {theme === "light" ? (
                 <HiMoon className="h-6 w-6" aria-label="toggle dark mode" />
@@ -66,12 +67,12 @@ export default function Header() {
 const RenderNav = ({ title, path, icon, target }: NavType) => {
   return (
     <li
-      className={`text-md font-xl flex items-center gap-1 px-4 py-2 ${" text-gray-900 hover:text-gray-800 dark:text-green-100 dark:hover:text-green-600"}
+      className={`text-md font-xl px-4 py-2 ${" text-gray-900 hover:text-gray-800 dark:text-green-100 dark:hover:text-green-600"}
     `}
     >
-      <> {icon}</>
-      <Link href={path} target={target}>
-        {title}
+      <Link href={path} target={target} className="flex items-center gap-1">
+        <> {icon}</>
+        <>{title}</>
       </Link>
     </li>
   );
@@ -109,24 +110,24 @@ const navigation: NavType[] = [
   {
     title: "Blogs",
     path: "/blogs",
-    icon: <FaBlogger className="h-5 w-5 text-green-500" />,
+    icon: <FaBlogger className="h-5 w-5 text-gray-700 dark:text-green-500" />,
   },
   {
     title: "Github",
     path: "https://github.com/abdi-aaqyaar",
-    icon: <FaGithub className="h-5 w-5 text-green-500" />,
+    icon: <FaGithub className="h-5 w-5 text-gray-700 dark:text-green-500" />,
     target: "_blank",
   },
   {
     title: "Linkedin",
     path: "https://www.linkedin.com/in/abdi-zamed-mohamed-aaqyaar/",
-    icon: <FaLinkedin className="h-5 w-5 text-green-500" />,
+    icon: <FaLinkedin className="h-5 w-5 text-gray-700 dark:text-green-500" />,
     target: "_blank",
   },
   {
     title: "Facebook",
     path: "https://facebook.com/abdi_aaqaar",
-    icon: <FaFacebook className="h-5 w-5 text-green-500" />,
+    icon: <FaFacebook className="h-5 w-5 text-gray-700 dark:text-green-500" />,
     target: "_blank",
   },
 ];
