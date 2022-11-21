@@ -18,7 +18,7 @@ export default function Hero() {
           <h1 className="text-4xl font-bold text-gray-800 dark:text-green-600 md:text-5xl">
             Hi, {"I'm"} Abdi Zamed Mohamed
           </h1>
-          <h2 className="my-4 text-2xl font-semibold text-gray-600 dark:text-green-300">
+          <h2 className="my-4 text-2xl font-semibold text-gray-600 dark:text-green-300/50">
             {"I'm"} a software engineer, I build web applications and mobile
             apps
           </h2>

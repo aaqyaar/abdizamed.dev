@@ -1,4 +1,4 @@
-import { About, Contact, Hero, Projects } from "containers";
+import { About, Contact, Hero, Blogs, Projects } from "containers";
 import { type NextPage } from "next";
 
 const HomePage: NextPage = () => {
@@ -7,6 +7,7 @@ const HomePage: NextPage = () => {
       <Hero />
       <About />
       <Projects />
+      <Blogs />
       <Contact />
     </div>
   );
