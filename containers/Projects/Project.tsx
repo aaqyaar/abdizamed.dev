@@ -3,16 +3,8 @@ import { FaGithub } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 import Image from "next/image";
 import Link from "next/link";
+import { type Project } from "lib/types";
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  github: string;
-  live: string;
-  technologies: string[];
-}
 export default function Project({
   title,
   description,
