@@ -1,10 +1,10 @@
 import React from "react";
-import { TextField } from "components";
+import { Button, TextField } from "components";
 import { type TForm } from "components/TextField";
 import { FormikProvider, Form, useFormik } from "formik";
 import { contactValidationSchema } from "lib/utils";
 
-export default function ContactForm() {
+export default function ContactForm({ onSubmit }: { onSubmit: any }) {
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -14,12 +14,14 @@ export default function ContactForm() {
       message: "",
     },
     validationSchema: contactValidationSchema,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      await onSubmit(values);
+      setSubmitting(false);
+      resetForm();
     },
   });
 
-  const { getFieldProps, handleSubmit, errors, touched } = formik;
+  const { getFieldProps, handleSubmit, errors, touched, isSubmitting } = formik;
 
   return (
     <FormikProvider value={formik}>
@@ -43,13 +45,13 @@ export default function ContactForm() {
           })}
 
           <div className="col-span-2 flex items-center justify-end">
-            <button
+            <Button
               type="submit"
-              className="cursor-pointer rounded-md bg-green-600 px-4 py-2 text-white hover:bg-green-500"
-              // disabled={false}
+              loading={isSubmitting}
+              className="w-full md:w-auto"
             >
-              Send
-            </button>
+              Submit
+            </Button>
           </div>
         </Form>
       </div>

@@ -36,4 +36,8 @@
   .error {
     @apply text-red-500 dark:text-red-400;
   }
+
+  .btn-md {
+    @apply cursor-pointer rounded-md bg-green-600 px-4 py-2 text-white hover:bg-green-500;
+  }
 }
