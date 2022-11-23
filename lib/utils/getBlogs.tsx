@@ -1,5 +1,5 @@
-import path from "path";
 import fs from "fs";
+import path from "path";
 import matter from "gray-matter";
 
 export default async function getBlogs() {

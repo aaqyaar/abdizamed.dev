@@ -20,7 +20,7 @@ export default function ContactForm() {
   });
 
   const { getFieldProps, handleSubmit, errors, touched } = formik;
-  console.log(errors);
+
   return (
     <FormikProvider value={formik}>
       <div className="col-span-2">

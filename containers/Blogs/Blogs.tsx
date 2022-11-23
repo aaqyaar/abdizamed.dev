@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { AiOutlineSmallDash } from "react-icons/ai";
 import { HiArrowRight } from "react-icons/hi";
-import { Post, type Posts } from "lib/types";
+import type { Post, Posts } from "lib/types";
 import Image from "next/image";
 
 type PropsType = {
