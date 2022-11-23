@@ -42,24 +42,19 @@ export default function Hero() {
             </Link>
           </div>
         </div>
-
-        <div
-          id="hero-media"
-          className=" relative hidden h-[27rem] w-[27rem] rounded-full border-4 dark:border-green-500  lg:col-span-5 lg:mt-0 lg:flex"
-        >
-          <Image
-            src="/images/abdi.png"
-            alt="Abdi Zamed Mohamed Adam"
-            className="rounded-full"
-            style={{
-              filter: "brightness(0.9)",
-              objectFit: "cover",
-              objectPosition: "top",
-            }}
-            fill
-            // h-[27rem]  w-[27rem]
-            quality={100}
-          />
+        <div className="col-span-5 mt-10 place-self-center lg:mt-0">
+          <div className="h-96 w-96 overflow-hidden rounded-full  border-2 border-gray-700 bg-gray-50 shadow-lg dark:bg-gray-800">
+            <Image
+              src="/images/hero-img2.png"
+              alt="Abdi Zamed Mohamed"
+              width={600}
+              height={600}
+              layout="responsive"
+              style={{
+                filter: "grayscale(50%)",
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>
