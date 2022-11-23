@@ -1,6 +1,7 @@
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
+
 export default async function getBlogs() {
   const blogsDirectory = path.join(process.cwd(), "lib", "data", "posts");
   const filenames = fs.readdirSync(blogsDirectory);

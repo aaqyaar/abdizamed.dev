@@ -2,6 +2,7 @@ import React from "react";
 import { TextField } from "components";
 import { type TForm } from "components/TextField";
 import { FormikProvider, Form, useFormik } from "formik";
+import * as Yup from "yup";
 
 export default function ContactForm() {
   const formik = useFormik({
