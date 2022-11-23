@@ -74,7 +74,7 @@ export default function About() {
               ) : (
                 <div className="flex h-[30vh] items-center justify-center">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-green-500">
-                    No Work Experience
+                    Oops not found {"their's"} problem in the app
                   </h3>{" "}
                 </div>
               )}
