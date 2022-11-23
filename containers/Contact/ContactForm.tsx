@@ -2,7 +2,7 @@ import React from "react";
 import { TextField } from "components";
 import { type TForm } from "components/TextField";
 import { FormikProvider, Form, useFormik } from "formik";
-import * as Yup from "yup";
+import { contactValidationSchema } from "lib/utils";
 
 export default function ContactForm() {
   const formik = useFormik({
@@ -13,13 +13,14 @@ export default function ContactForm() {
       subject: "",
       message: "",
     },
+    validationSchema: contactValidationSchema,
     onSubmit: (values) => {
       console.log(values);
     },
   });
 
-  const { getFieldProps, handleSubmit } = formik;
-
+  const { getFieldProps, handleSubmit, errors, touched } = formik;
+  console.log(errors);
   return (
     <FormikProvider value={formik}>
       <div className="col-span-2">
@@ -32,15 +33,10 @@ export default function ContactForm() {
             return (
               <div className="col-span-2" key={i}>
                 <TextField
-                  name={form.name}
-                  label={form.label}
-                  placeholder={form.placeholder}
-                  type={form.type}
-                  required={form.required}
-                  component={form.component}
-                  className={form.className}
-                  rows={form.rows}
+                  {...form}
                   getFieldProps={getFieldProps}
+                  errors={errors}
+                  touched={touched}
                 />
               </div>
             );
@@ -50,7 +46,7 @@ export default function ContactForm() {
             <button
               type="submit"
               className="cursor-pointer rounded-md bg-green-600 px-4 py-2 text-white hover:bg-green-500"
-              disabled={false}
+              // disabled={false}
             >
               Send
             </button>

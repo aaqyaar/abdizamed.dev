@@ -16,6 +16,9 @@ export type TForm = {
   disabled?: boolean;
 
   component?: string;
+
+  errors?: any;
+  touched?: any;
 };
 
 export default function TextField({
@@ -30,6 +33,8 @@ export default function TextField({
   rows,
   disabled,
   component,
+  errors,
+  touched,
 }: TForm) {
   return (
     <>
@@ -61,7 +66,7 @@ export default function TextField({
         />
       )}
 
-      {error && <p className="error">{error}</p>}
+      {errors.name && <p className="error">{errors.name && touched.name}</p>}
     </>
   );
 }
