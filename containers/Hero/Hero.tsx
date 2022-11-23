@@ -43,7 +43,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="col-span-5 mt-10 place-self-center lg:mt-0">
-          <div className="h-96 w-96 overflow-hidden rounded-full  border-2 border-gray-700 bg-gray-50 shadow-lg dark:bg-gray-800">
+          <div className="h-96 w-96 overflow-hidden rounded-full  border-2 border-green-600 bg-gray-50 shadow-lg dark:border-gray-700 dark:bg-gray-800">
             <Image
               src="/images/hero-img2.png"
               alt="Abdi Zamed Mohamed"

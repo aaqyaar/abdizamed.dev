@@ -1,5 +1,36 @@
 import React from "react";
 import { AiOutlineSmallDash } from "react-icons/ai";
+import { about, workExpereince } from "lib/data";
+import type { IWorkExperience } from "lib/types";
+import { HiLocationMarker } from "react-icons/hi";
+
+const WorkExperience = ({
+  position,
+  company,
+  description,
+  startDate,
+  endDate,
+}: IWorkExperience) => {
+  return (
+    <div className="mt-4">
+      <div className="flex items-center">
+        <div className="mr-2 h-2 w-2 rounded-full bg-green-600"></div>
+        <h4 className="text-lg font-semibold text-gray-900 dark:text-green-500">
+          {position} at {company}
+        </h4>
+      </div>
+      <p className="mt-2 text-gray-500 dark:text-gray-400">{description}</p>
+
+      {/* startDATE -ENDDATE */}
+      <div className="mt-2 flex items-center">
+        <AiOutlineSmallDash className="h-4 w-4 text-gray-500 dark:text-gray-400" />
+        <p className="ml-2 text-gray-500 dark:text-gray-400">
+          {startDate} - {endDate}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 export default function About() {
   return (
@@ -12,52 +43,41 @@ export default function About() {
             <h2 className="text-3xl font-bold text-gray-900 dark:text-green-500">
               About Me
             </h2>
-            <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
-              A Full Stack Developer with 2+ years of experience in designing
-              and developing user interfaces, testing, debugging, and training
-              staff within modern technologies. Proven ability in optimizing web
-              functionalities that improve data retrieval and workflow
-              efficiencies. some of the work I accomplished for them included
-              creating websites, web applications, brands, and other things.
-            </p>
-          </div>
-          <div className="col-span-12 lg:col-span-6">
-            <div className="mt-4">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-green-500">
-                Work Experience
-              </h3>
-              <div className="mt-4">
-                <div className="flex items-center">
-                  <div className="mr-2 h-2 w-2 rounded-full bg-green-600"></div>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-green-500">
-                    Full Stack Developer at Silicon
-                  </h4>
-                </div>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  I worked as a full stack developer at Silicon, I worked on a
-                  many projects and I learned a lot of things, I worked with
-                  different technologies and I learned how to use them, I
-                  learned how to work in a team and how to communicate with my
-                  team members, I learned how to work under pressure and how to
-                  deliver the project on time.
-                </p>
-              </div>
 
-              <div className="mt-4">
-                <div className="flex items-center">
-                  <div className="mr-2 h-2 w-2 rounded-full bg-green-600"></div>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-green-500">
-                    Full Stack Development Intern at Yooltech
-                  </h4>
+            <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
+              {about.excerpt}
+            </p>
+
+            {/* location  */}
+            <div className="mt-4 flex items-center">
+              <HiLocationMarker className="h-6 w-6 pr-2 text-green-600" />
+              <p className="text-gray-500 dark:text-gray-400">
+                {about.city + ", " + about.state}
+              </p>
+            </div>
+          </div>
+          {/* work experience */}
+          <div className="col-span-12 lg:col-span-6">
+            <div className="mt-10">
+              {workExpereince.length > 0 ? (
+                <>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-green-500">
+                    Work Experience
+                  </h3>
+                  {workExpereince.map((work: IWorkExperience, i) => (
+                    <WorkExperience
+                      key={i}
+                      {...work} // spread operator
+                    />
+                  ))}
+                </>
+              ) : (
+                <div className="flex h-[30vh] items-center justify-center">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-green-500">
+                    No Work Experience
+                  </h3>{" "}
                 </div>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  I worked as a full stack development intern at Yooltech, I was
-                  a part of a team that worked on a project for a client, I
-                  learned a lot of things, We worked with different technologies
-                  Such as React, Nextjs, Nodejs, Expressjs, MongoDB, and many
-                  more.
-                </p>
-              </div>
+              )}
             </div>
           </div>
         </div>
