@@ -3,8 +3,7 @@ import type { Posts } from "lib/types";
 import { getBlogs } from "lib/utils";
 
 const HomePage = async () => {
-  // const blogs: Posts = await getBlogs();
-  const blogs: Posts = [];
+  const blogs: Posts = await getBlogs();
   return (
     <div className="container my-10">
       <Hero />

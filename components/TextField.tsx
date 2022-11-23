@@ -36,7 +36,6 @@ export default function TextField({
   errors,
   touched,
 }: TForm) {
-  console.log(errors[name]);
   return (
     <>
       <label htmlFor={name} className="label">
@@ -67,7 +66,11 @@ export default function TextField({
         />
       )}
 
-      {<p className="error">{errors[name] && touched[name] && errors[name]}</p>}
+      {errors[name] && (
+        <p className="error pt-2">
+          {errors[name] && touched[name] && errors[name]}
+        </p>
+      )}
     </>
   );
 }
