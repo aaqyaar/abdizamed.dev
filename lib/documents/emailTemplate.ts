@@ -9,7 +9,7 @@ export const email_template = ({
 }: TContact) => {
   const defaultYear = new Date().getFullYear();
   return `
-    <body style="background: #f3f4f6;">
+    <body style="background: #f3f4f6; padding:0 5px;">
     <div style="max-width: 600px; margin: 0 auto; padding: 20px 0; font-family:Trebuchet MS;">
     <div style="text-align: center; margin-bottom: 20px;">
      <h1 style="color: #000; text-transform: uppercase; font-size: 30px;">You have new message from your website</h1>
