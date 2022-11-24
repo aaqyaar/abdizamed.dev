@@ -21,7 +21,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const result = await sendEmail({
       from: email,
       subject: `A Message from Your website - ${process.env.NEXT_PUBLIC_API}`,
-      text: email_template(name, email, subject, message, phone),
+      text: email_template(req.body),
     });
     return res.status(200).json({ result });
   }

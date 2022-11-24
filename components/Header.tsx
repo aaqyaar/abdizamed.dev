@@ -19,13 +19,13 @@ export default function Header() {
   const isScrolledtoDown = useScrollDown(50);
   return (
     <header
-      className={` sticky top-0 z-50 max-w-full bg-white py-5 px-5 dark:bg-gray-900  ${
-        isScrolledtoDown && "shadow shadow-gray-50 dark:shadow-green-500"
+      className={` sticky top-0 z-50 max-w-full bg-white py-4 px-5 dark:bg-gray-900  ${
+        isScrolledtoDown && "shadow shadow-gray-50 dark:shadow-green-200"
       }`}
     >
-      <div className="mx-auto flex max-w-[1240px] items-center justify-between">
+      <div className="md:mx-auto flex md:max-w-[1240px] items-center justify-between">
         <div id="brand">
-          <h1 className="ml-2 text-2xl font-bold text-green-600">
+          <h1 className="ml-2 text-lg sm:text-xl md:text-2xl font-bold text-green-600">
             Abdi Zamed Mohamed
           </h1>
         </div>
@@ -33,7 +33,7 @@ export default function Header() {
           {desktopNav()}
           <div className="ml-4 flex items-center">
             <button
-              className="rounded-md  p-1 text-green-600 outline outline-offset-2 outline-green-700 dark:bg-transparent dark:text-green-500 dark:outline-green-500"
+              className="rounded-md  p-1 text-green-600 outline outline-offset-2 outline-green-600 dark:bg-transparent dark:text-green-500 dark:outline-green-500"
               aria-label="toggle dark mode"
               onClick={() => toggleTheme()}
               title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
@@ -67,10 +67,9 @@ export default function Header() {
 const RenderNav = ({ title, path, icon, target }: NavType) => {
   return (
     <li
-      className={`text-md font-xl px-4 py-2 ${" text-gray-900 hover:text-gray-800 dark:text-green-100 dark:hover:text-green-600"}
-    `}
+      className={`text-md font-xl px-4 py-2`}
     >
-      <Link href={path} target={target} className="flex items-center gap-1">
+      <Link href={path} target={target} className="flex items-center gap-1 text-gray-900 hover:text-gray-800 dark:text-green-100 dark:hover:text-green-600">
         <> {icon}</>
         <>{title}</>
       </Link>

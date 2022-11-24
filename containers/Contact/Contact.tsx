@@ -8,20 +8,21 @@ import {
   AiOutlineLinkedin,
   AiOutlineSmallDash,
 } from "react-icons/ai";
+import type { TContact } from "lib/types";
 import ContactForm from "./ContactForm";
 
 export default function Contact() {
-  const handleSubmit = async (values: any) => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/contact`, {
+  const handleSubmit = async (values: TContact) => {
+    const res = await fetch(`/api/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(values),
     });
-    const data = await res.json();
+    await res.json();
     if (!res.ok) {
-      toast.error(data.message || "Something went wrong!");
+      toast.error("Something went wrong!");
     }
     toast.success("Message sent successfully!");
   };
@@ -29,21 +30,22 @@ export default function Contact() {
   return (
     <>
       <div className="w-screen bg-white dark:bg-gray-900">
-        <div className="mx-10 py-10 lg:mx-auto lg:max-w-screen-xl">
+        <div className="mx-4 py-10 md:mx-10 lg:mx-auto lg:max-w-screen-xl">
           {/* contact form with name, email, phone, subject, message */}
           <AiOutlineSmallDash className="text-4xl text-green-600" />
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-green-600">
-            Contact
-          </h2>
+          <h2 className="text-3xl font-bold text-green-500">Contact</h2>
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             <div className="flex flex-col items-center justify-center">
               <div className="flex h-36 w-36 items-center justify-center rounded-full border-4 border-green-600 dark:border-green-400">
                 <Image
-                  src="/images/abdi.png"
+                  src="/images/hero-img2.png"
                   alt="Abdi Aaqyaar"
-                  className="h-full w-full rounded-full object-cover"
+                  className="h-full w-full rounded-full object-cover object-top"
                   width={128}
                   height={128}
+                  style={{
+                    filter: "grayscale(40%)",
+                  }}
                   quality={100}
                 />
               </div>

@@ -7,8 +7,8 @@ export default function useTheme() {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme("dark");
     } else {
-      // setTheme("light");
-      setTheme("dark");
+      setTheme("light");
+      // setTheme("dark");
     }
   }, []);
 
@@ -24,7 +24,7 @@ export default function useTheme() {
   }, [theme]);
 
   const toggleTheme = () => {
-    theme === "dark" ? setTheme("dark") : setTheme("dark");
+    theme === "dark" ? setTheme("light") : setTheme("dark");
   };
 
   return { theme, toggleTheme };

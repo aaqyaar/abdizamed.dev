@@ -28,8 +28,8 @@ export default function Meta({
       description ||
       "A Full Stack Developer with years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web & mobile functionalities that improve data retrieval and workflow efficiencies.",
     author: author || "Abdi Zamed Mohamed",
-    image: image || "/images/abdizamed.png",
-    url: url + router?.pathname || "https://abdizamed.com" + router?.pathname,
+    image: image || "/images/abdizamed.svg",
+    url: router?.pathname === undefined ?  "https://abdizamed.com" : "https://abdizamed.com" + router?.pathname,
     keywords:
       keywords ||
       "Abdi Zamed Mohamed, Full Stack Developer, React Website, Portfolio, Somali Developer, Somali Programmer, Software Developer, abdizamed, abdi-aaqyaar, aaqyaar, github.com/abdi-aaqyaar, https://abdizamed.com, https://github.com/abdi-aaqyaar",
@@ -55,14 +55,14 @@ export default function Meta({
       <meta name="og:url" content={meta.url} />
       <meta name="og:title" content={meta.title} />
       <meta name="og:description" content={meta.description} />
-      <meta name="og:image" content={`${url}${meta.image}`} />
+      <meta name="og:image" content={meta.image} />
 
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={meta.url} />
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:description" content={meta.description} />
-      <meta name="twitter:image" content={`${url}${meta.image}`} />
+      <meta name="twitter:image" content={meta.image} />
     </>
   );
 }

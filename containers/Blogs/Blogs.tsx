@@ -13,10 +13,10 @@ type PropsType = {
 export default function Blogs({ data }: PropsType) {
   return (
     <section className="bg-white dark:bg-gray-900">
-      <div className="mx-10 py-8 lg:mx-auto lg:max-w-screen-xl  lg:py-16">
-        <div className=" mb-8 lg:mb-10">
+      <div className="mx-4 py-10 md:mx-10 lg:mx-auto lg:max-w-screen-xl lg:py-16">
+        <div className="mb-8 lg:mb-10">
           <AiOutlineSmallDash className="text-4xl text-green-600" />
-          <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-green-500 lg:text-3xl">
+          <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-green-500 lg:text-3xl">
             Blogs
           </h2>
         </div>

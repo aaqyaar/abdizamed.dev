@@ -3,8 +3,13 @@ import { Button, TextField } from "components";
 import { type TForm } from "components/TextField";
 import { FormikProvider, Form, useFormik } from "formik";
 import { contactValidationSchema } from "lib/utils";
+import type { TContact } from "lib/types";
 
-export default function ContactForm({ onSubmit }: { onSubmit: any }) {
+export default function ContactForm({
+  onSubmit,
+}: {
+  onSubmit: (values: TContact) => void;
+}) {
   const formik = useFormik({
     initialValues: {
       name: "",
