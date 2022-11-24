@@ -35,14 +35,12 @@ const WorkExperience = ({
 export default function About() {
   return (
     <section className="w-screen bg-white dark:bg-gray-900">
-      <div className="mx-4 py-8 lg:mx-auto lg:max-w-screen-xl lg:py-16 xl:py-20">
+      <div className="mx-4 py-8 md:mx-10 lg:mx-auto lg:max-w-screen-xl lg:py-16 xl:py-20">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           <div className="col-span-12 lg:col-span-6">
             {/* hyphen -  */}
             <AiOutlineSmallDash className="text-4xl text-green-600" />
-            <h2 className="text-3xl font-bold text-green-500">
-              About Me
-            </h2>
+            <h2 className="text-3xl font-bold text-green-500">About Me</h2>
 
             <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
               {about.excerpt}
