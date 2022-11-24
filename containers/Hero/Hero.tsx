@@ -9,14 +9,13 @@ export default function Hero() {
         id="hero"
         className="grid justify-items-center place-items-center place-content-center py-8 lg:mx-auto lg:max-w-screen-xl lg:grid-cols-12 lg:gap-8 lg:py-16 xl:gap-0 2xl:py-20"
       >
-        {/* flex  h-[70vh] w-full flex-wrap items-center justify-center md:flex-nowrap */}
         <div
           id="hero-content"
           className="col-span-12 lg:col-span-7 lg:mr-auto place-self-center px-2"
           // px-52
         >
           <h1 className="text-center md:text-start text-4xl font-bold text-gray-800 dark:text-green-600 md:text-5xl">
-            Hi, {"I'm"} Abdi Zamed Mohamed
+            <span className="text-green-600">Hi, {"I'm"}</span> Abdi Zamed <span className="text-green-600">Mohamed</span>
           </h1>
           {/* <h2 className="my-4 text-2xl font-semibold text-gray-600 dark:text-green-300/50">
             {"I'm"} a software engineer, I build web applications and mobile
@@ -43,7 +42,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="col-span-12 lg:col-span-5 mt-10  lg:mt-0">
-          <div className="md:h-96 w-80 h-80 md:w-96 overflow-hidden rounded-full  border-2 border-green-600 bg-gray-50 shadow-lg dark:border-gray-700 dark:bg-gray-800">
+          <div className="md:h-96 w-80 h-80 md:w-96 overflow-hidden rounded-full  border-2 border-green-600 bg-gray-50 shadow-lg shadow-green-50 dark:shadow-gray-800 dark:border-gray-700 dark:bg-gray-800">
             <Image
               src="/images/hero-img2.png"
               alt="Abdi Zamed Mohamed"

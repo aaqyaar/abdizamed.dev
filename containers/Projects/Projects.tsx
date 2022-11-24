@@ -7,10 +7,10 @@ import type { Project as ProjectType } from "lib/types";
 export default function Projects() {
   return (
     <section className="w-screen bg-white dark:bg-gray-900">
-      <div className="mx-10 py-10 lg:mx-auto lg:max-w-screen-xl">
+      <div className="mx-4 py-10 lg:mx-auto lg:max-w-screen-xl">
         <AiOutlineSmallDash className="text-4xl text-green-600" />
 
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-green-600">
+        <h2 className="text-3xl font-bold text-green-500">
           Projects
         </h2>
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
