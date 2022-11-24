@@ -20,7 +20,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     //   send the data to the server
     const result = await sendEmail({
       from: email,
-      subject: `A Message from Your website - ${process.env.NEXT_PUBLIC_API}`,
+      subject: `A Message from Your website - ${req.url}`,
       text: email_template(req.body),
     });
     return res.status(200).json({ result });
