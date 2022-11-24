@@ -55,14 +55,14 @@ export default function Meta({
       <meta name="og:url" content={meta.url} />
       <meta name="og:title" content={meta.title} />
       <meta name="og:description" content={meta.description} />
-      <meta name="og:image" content={`${url}${meta.image}`} />
+      <meta name="og:image" content={meta.image} />
 
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={meta.url} />
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:description" content={meta.description} />
-      <meta name="twitter:image" content={`${url}${meta.image}`} />
+      <meta name="twitter:image" content={meta.image} />
     </>
   );
 }
