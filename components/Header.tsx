@@ -109,7 +109,7 @@ const mobileNav = ({
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50"></div>
 
         <div
-          className={`absolute inset-x-0 z-50 my-7 ml-2 mr-4 rounded-lg bg-white shadow-2xl dark:bg-gray-800  ${
+          className={`absolute inset-x-0 z-50 my-7 ml-1 mr-2 rounded-lg bg-white shadow-2xl dark:bg-gray-800  ${
             open && "translate-y-0"
           } transform p-2 transition duration-300 ease-in-out`}
         >
