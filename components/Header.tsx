@@ -23,9 +23,9 @@ export default function Header() {
         isScrolledtoDown && "shadow shadow-gray-50 dark:shadow-green-200"
       }`}
     >
-      <div className="md:mx-auto flex md:max-w-[1240px] items-center justify-between">
+      <div className="flex items-center justify-between md:mx-auto md:max-w-[1240px]">
         <div id="brand">
-          <h1 className="ml-2 text-lg sm:text-xl md:text-2xl font-bold text-green-600">
+          <h1 className="ml-2 text-lg font-bold text-green-600 sm:text-xl md:text-2xl">
             Abdi Zamed Mohamed
           </h1>
         </div>
@@ -66,10 +66,13 @@ export default function Header() {
 
 const RenderNav = ({ title, path, icon, target }: NavType) => {
   return (
-    <li
-      className={`text-md font-xl px-4 py-2`}
-    >
-      <Link href={path} target={target} className="flex items-center gap-1 text-gray-900 hover:text-gray-800 dark:text-green-100 dark:hover:text-green-600">
+    <li className={`text-md font-xl px-4 py-2`}>
+      <Link
+        href={path}
+        passHref
+        target={target}
+        className="flex items-center gap-1 text-gray-900 hover:text-gray-800 dark:text-green-100 dark:hover:text-green-600"
+      >
         <> {icon}</>
         <>{title}</>
       </Link>

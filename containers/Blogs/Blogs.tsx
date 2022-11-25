@@ -52,7 +52,7 @@ export default function Blogs({ data }: PropsType) {
                   </span>
                 </div>
                 <Link
-                  href={`/blogs/${blog.slug}`}
+                  href={`/blogs/${encodeURIComponent(blog.slug)}`}
                   className="inline-flex items-center font-medium text-green-600 hover:underline dark:text-green-500"
                 >
                   Read more
