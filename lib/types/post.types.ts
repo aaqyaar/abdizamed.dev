@@ -1,4 +1,4 @@
-export interface Post {
+export type Post = {
   title: string;
   slug: string;
   excerpt: string;
@@ -9,6 +9,6 @@ export interface Post {
   category: string;
   tags: string[];
   content: string[];
-}
+};
 
 export type Posts = Post[];

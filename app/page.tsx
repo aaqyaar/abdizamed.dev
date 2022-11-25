@@ -1,15 +1,18 @@
 import { About, Contact, Hero, Blogs, Projects } from "containers";
-import type { Posts } from "lib/types";
-import { getBlogs } from "lib/utils";
+// import type { Posts } from "lib/types";
+import { getLatestPosts } from "lib/utils";
 
 const HomePage = async () => {
-  const blogs: Posts = await getBlogs();
+  const { res: posts, error } = await getLatestPosts();
+  // const res = await fetch("http://localhost:3000/api/posts");
+  // const data = await res.json();
+  // console.log(data);
   return (
     <div className="container my-10">
       <Hero />
       <About />
       <Projects />
-      <Blogs data={blogs} />
+      <Blogs data={posts} error={error} />
       <Contact />
     </div>
   );
