@@ -10,7 +10,7 @@ export default async function handler(
     try {
       const { posts, error } = await getLatestPosts();
       if (error) throw new Error(error as string);
-      res.status(200).json(posts);
+      res.status(200).json({ posts, success: true });
     } catch (error: any) {
       res.status(500).json({ error: error.message });
     }
