@@ -46,20 +46,25 @@ export default function Header() {
             </button>
           </div>
           <div className="ml-4 inline-flex items-center lg:hidden">
-            <button
-              className="rounded-md p-2 text-green-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-600 hover:bg-green-500 hover:text-green-200"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {!isOpen ? (
+            {!isOpen ? (
+              <button
+                className="rounded-md p-2 text-green-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-600 hover:bg-green-500 hover:text-green-200"
+                onClick={() => setIsOpen(!isOpen)}
+              >
                 <HiMenu className="h-6 w-6" aria-hidden="true" />
-              ) : (
-                <HiX className="h-6 w-6" aria-hidden="true" />
-              )}
-            </button>
+              </button>
+            ) : // <HiX className="h-6 w-6" aria-hidden="true" />
+            null}
           </div>
         </nav>
       </div>
-      {isOpen && mobileNav({ open: isOpen })}
+      {isOpen &&
+        mobileNav({
+          open: isOpen,
+          onOpenNav() {
+            setIsOpen(!isOpen);
+          },
+        })}
     </header>
   );
 }
@@ -90,21 +95,40 @@ const desktopNav = () => {
   );
 };
 
-const mobileNav = ({ open }: { open: boolean }) => {
+const mobileNav = ({
+  open,
+  onOpenNav,
+}: {
+  open: boolean;
+  onOpenNav: () => void;
+}) => {
   return (
-    <div className="block lg:hidden">
-      <div
-        className={`absolute inset-x-0 z-50 my-7 mr-6 ml-2 rounded-lg bg-white shadow-2xl dark:bg-gray-800  ${
-          open && "translate-y-0"
-        } transform p-2 transition duration-300 ease-in-out`}
-      >
-        <ul className="flex flex-col items-start p-5">
-          {navigation.map((nav: NavType) => (
-            <RenderNav key={nav.title} {...nav} />
-          ))}
-        </ul>
+    // backdrop model
+    <>
+      <div className="relative block lg:hidden">
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50"></div>
+
+        <div
+          className={`absolute inset-x-0 z-50 my-7 ml-2 mr-4 rounded-lg bg-white shadow-2xl dark:bg-gray-800  ${
+            open && "translate-y-0"
+          } transform p-2 transition duration-300 ease-in-out`}
+        >
+          <div className="absolute right-2">
+            <button
+              className="rounded-md p-2 text-green-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-600 hover:bg-green-500 hover:text-green-200"
+              onClick={() => onOpenNav()}
+            >
+              <HiX className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <ul className="flex flex-col items-start p-5">
+            {navigation.map((nav: NavType) => (
+              <RenderNav key={nav.title} {...nav} />
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

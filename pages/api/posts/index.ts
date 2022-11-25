@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createPost, updatePost, getPosts } from "lib/prisma/posts";
 import type { NextApiRequest, NextApiResponse } from "next";
 

@@ -1,7 +1,9 @@
 interface IApi {
   url?: string;
   method?: string;
-  headers?: any;
+  headers?: {
+    [key: string]: string;
+  };
   route?: string;
 }
 

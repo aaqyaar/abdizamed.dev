@@ -11,7 +11,7 @@ export default function Hero() {
       >
         <div
           id="hero-content"
-          className="col-span-12 place-self-center px-2 lg:col-span-7 lg:mr-auto"
+          className="col-span-12 mx-2 place-content-center justify-items-center lg:col-span-7 lg:mr-auto"
           // px-52
         >
           <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-green-600 md:text-start md:text-5xl">
