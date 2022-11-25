@@ -10,7 +10,7 @@ type PropsType = {
   data: {
     posts: Posts;
   };
-  error: any;
+  error: unknown;
 };
 
 export default function Blogs({ data, error }: PropsType) {
@@ -24,8 +24,8 @@ export default function Blogs({ data, error }: PropsType) {
           </h2>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
-          {Array.isArray(data.posts) && data.posts.length > 0 && !error ? (
-            data.posts.map((blog: Post, i) => (
+          {Array.isArray(data?.posts) && data?.posts.length > 0 && !error ? (
+            data?.posts.map((blog: Post, i) => (
               <article
                 key={i}
                 className="rounded-lg border border-gray-50 p-6 shadow-md shadow-gray-50 dark:border-gray-800 dark:bg-gray-900 dark:shadow-gray-900"

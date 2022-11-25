@@ -1,12 +1,12 @@
 import { About, Contact, Hero, Blogs, Projects } from "containers";
-// import type { Posts } from "lib/types";
-import { getLatestPosts } from "lib/utils";
+import { useDynamicApi } from "lib/utils";
 
 const HomePage = async () => {
-  const { res: posts, error } = await getLatestPosts();
-  // const res = await fetch("http://localhost:3000/api/posts");
-  // const data = await res.json();
-  // console.log(data);
+  const { res: posts, error } = await useDynamicApi({
+    route: "/api/posts/latest",
+    method: "GET",
+  });
+
   return (
     <div className="container my-10">
       <Hero />

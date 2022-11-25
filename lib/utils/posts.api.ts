@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 // import axios from "axios";
-import useDynamicApi from "./dynamicApi";
+// import useDynamicApi from "./dynamicApi";
 
 export async function getPosts() {
   const blogsDirectory = path.join(process.cwd(), "lib", "data", "posts");
@@ -22,11 +22,3 @@ export async function getPosts() {
 //   const res = await axios.get(`/api/posts?${slug}`);
 //   return res.data;
 // }
-
-export const getLatestPosts = async () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  return await useDynamicApi({
-    method: "GET",
-    route: "/api/posts/latest",
-  });
-};
