@@ -41,6 +41,6 @@ export default async function handler(
   }
   // } finally {
   //   res.setHeader("Allow", ["GET", "POST", "PUT"]);
-  //   res.status(405).end(`Method ${method} Not Allowed`);
+  //   return res.status(405).end(`Method ${method} Not Allowed`);
   // }
 }

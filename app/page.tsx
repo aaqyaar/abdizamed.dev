@@ -7,7 +7,6 @@ const HomePage = async () => {
     route: "/api/posts/latest",
     method: "GET",
   });
-  console.log(error);
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className="container my-10">
