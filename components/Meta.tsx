@@ -29,7 +29,10 @@ export default function Meta({
       "A Full Stack Developer with years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web & mobile functionalities that improve data retrieval and workflow efficiencies.",
     author: author || "Abdi Zamed Mohamed",
     image: image || "/images/abdizamed.svg",
-    url: router?.pathname === undefined ?  "https://abdizamed.com" : "https://abdizamed.com" + router?.pathname,
+    url:
+      router?.pathname === undefined
+        ? url || "https://abdizamed.com"
+        : url || "https://abdizamed.com" + router?.pathname,
     keywords:
       keywords ||
       "Abdi Zamed Mohamed, Full Stack Developer, React Website, Portfolio, Somali Developer, Somali Programmer, Software Developer, abdizamed, abdi-aaqyaar, aaqyaar, github.com/abdi-aaqyaar, https://abdizamed.com, https://github.com/abdi-aaqyaar",
@@ -56,7 +59,8 @@ export default function Meta({
       <meta name="og:title" content={meta.title} />
       <meta name="og:description" content={meta.description} />
       <meta name="og:image" content={meta.image} />
-
+      <meta property="og:image:width" content="300" />
+      <meta property="og:image:height" content="300" />
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={meta.url} />
