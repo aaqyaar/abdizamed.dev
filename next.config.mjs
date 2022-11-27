@@ -12,7 +12,12 @@ const config = {
     appDir: true,
   },
   images: {
-    domains: ["avatars.githubusercontent.com", "github.com"],
+    domains: [
+      "avatars.githubusercontent.com",
+      "github.com",
+      "lh3.googleusercontent.com",
+      "reactjs.org",
+    ],
   },
   i18n: {
     locales: ["en"],

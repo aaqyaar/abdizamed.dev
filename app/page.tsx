@@ -9,11 +9,12 @@ const HomePage = async () => {
   });
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="container my-10">
+      <div className="my-10">
         <Hero />
         <About />
         <Projects />
         <Blogs data={posts} error={error} />
+
         <Contact />
       </div>
     </Suspense>
