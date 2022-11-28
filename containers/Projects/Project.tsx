@@ -12,6 +12,7 @@ export default function Project({
   github,
   live,
   technologies,
+  completed,
 }: Project) {
   return (
     <>
@@ -45,16 +46,20 @@ export default function Project({
         {/* buttons */}
         <div className="mt-4 flex items-center justify-center">
           <Link
-            href={live}
-            className="mr-4 flex items-center text-green-600 dark:text-green-400"
+            href={completed ? live : ""}
+            className={`${
+              completed && "disabled"
+            } mr-4 flex items-center text-green-600 dark:text-green-400`}
           >
             <TbWorld className="h-7 w-7 pr-2 " />
             Live
           </Link>
 
           <Link
-            href={github}
-            className="mr-4 flex items-center text-green-600 dark:text-green-400"
+            href={completed ? github : ""}
+            className={`${
+              completed && "disabled"
+            } mr-4 flex items-center text-green-600 dark:text-green-400`}
           >
             <FaGithub className="h-6 w-6 pr-2" />
             Github

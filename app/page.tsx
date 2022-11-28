@@ -1,6 +1,7 @@
 import { About, Contact, Hero, Blogs, Projects } from "containers";
 import { Suspense } from "react";
 import { getPosts } from "lib/utils";
+import { LoadingScreen } from "components";
 
 const HomePage = async () => {
   // const { res: posts, error } = await useDynamicApi({
@@ -11,7 +12,7 @@ const HomePage = async () => {
   const { data: posts, error } = await getPosts();
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<LoadingScreen />}>
       <div className="my-10">
         <Hero />
         <About />

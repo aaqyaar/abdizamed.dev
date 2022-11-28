@@ -50,7 +50,12 @@ const settings = {
   ],
 };
 
-const renderArrows = (slider: any) => {
+const renderArrows = (slider: {
+  current: {
+    slickNext: () => void;
+    slickPrev: () => void;
+  };
+}) => {
   return (
     <div className="slick-arrow">
       {/* next button */}

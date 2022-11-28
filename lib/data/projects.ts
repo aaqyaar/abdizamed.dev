@@ -9,6 +9,7 @@ export const projects: Projects = [
     image: "/images/abdi.png",
     github: "https://www.github.com/abdi-aaqyaar/ecommerce",
     live: "https://ecommerce-aaqyaar.vercel.app/",
+    completed: false,
     features: [
       "User Authentication",
       "User Profile",
@@ -41,6 +42,7 @@ export const projects: Projects = [
     github: "https://www.github.com/abdi-aaqyaar/elearning",
     live: "https://elearning-aaqyaar.vercel.app/",
     technologies: ["React JS", "Next JS", "Redux", "Tailwind CSS", "Firebase"],
+    completed: false,
     features: [
       "User Authentication",
       "User Profile",
@@ -66,6 +68,7 @@ export const projects: Projects = [
   {
     id: 3,
     title: "Porfolio Website",
+    completed: false,
     description:
       "A Porfolio Website built with Nextjs, React, Redux, Tailwindcss, and Firebase.",
     image: "/images/portfolio.png",
@@ -96,6 +99,7 @@ export const projects: Projects = [
   {
     id: 4,
     title: "Porfolio Website",
+    completed: false,
     description:
       "A Porfolio Website built with Nextjs, React, Redux, Tailwindcss, and Firebase.",
     image: "/images/portfolio.png",
@@ -126,6 +130,7 @@ export const projects: Projects = [
   {
     id: 5,
     title: "Porfolio Website",
+    completed: false,
     description:
       "A Porfolio Website built with Nextjs, React, Redux, Tailwindcss, and Firebase.",
     image: "/images/portfolio.png",
@@ -162,6 +167,7 @@ export const projects: Projects = [
     github: "https://www.github.com/abdi-aaqyaar/ecommerce",
     live: "https://ecommerce-aaqyaar.vercel.app/",
     technologies: ["React JS", "Next JS", "Redux", "Tailwind CSS", "Firebase"],
+    completed: false,
     features: [
       "User Authentication",
       "User Profile",

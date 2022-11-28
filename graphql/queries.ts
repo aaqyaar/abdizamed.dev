@@ -7,6 +7,7 @@ export const GET_PROJECTS = gql`
       title
       description
       image
+      completed
       github
       live
       features
@@ -22,6 +23,7 @@ export const GET_PROJECT = gql`
       title
       description
       image
+      completed
       github
       live
       features

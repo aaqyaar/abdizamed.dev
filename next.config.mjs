@@ -12,11 +12,12 @@ const config = {
     appDir: true,
   },
   images: {
-    domains: [
-      "avatars.githubusercontent.com",
-      "github.com",
-      "lh3.googleusercontent.com",
-      "reactjs.org",
+    //  allow all http domains
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
     ],
   },
   i18n: {
