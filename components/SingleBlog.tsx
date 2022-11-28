@@ -1,18 +1,20 @@
+"use client";
 import type { Post } from "lib/types";
 import { formatDate } from "lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useMemo } from "react";
 import { HiOutlineCalendar, HiOutlineUser } from "react-icons/hi";
 import { MdArrowBackIosNew } from "react-icons/md";
-import ReactMarkdown from "react-markdown";
+import md from "markdown-it";
+
 type Props = {
   post: Post;
 };
 
 export default function SingleBlog({ post }: Props) {
   const contentToRender = post.content.join(" ");
-  console.log(contentToRender);
+
   return (
     <div className="relative mb-10 w-screen">
       <div className="mx-auto max-w-screen-lg">
@@ -70,9 +72,14 @@ export default function SingleBlog({ post }: Props) {
             {post.title}
           </h1>
           <p className="text-center text-lg text-gray-600">{post.excerpt}</p>
-          <ReactMarkdown className="my-10 text-gray-400">
-            {contentToRender}
-          </ReactMarkdown>
+
+          <div className="my-10 text-gray-800 dark:text-gray-400">
+            <article
+              dangerouslySetInnerHTML={{
+                __html: md().render(post.content.toString()),
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>
