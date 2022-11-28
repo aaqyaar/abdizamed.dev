@@ -1,4 +1,4 @@
-import { Footer, Header } from "layouts";
+import { Header } from "layouts";
 import "styles/globals.css";
 
 export default function RootLayout({
@@ -12,7 +12,6 @@ export default function RootLayout({
       <body className="snap-scroll-y scrollbar-base dark:bg-gray-900">
         <Header />
         <main className="overflow-x-hidden">{children}</main>
-        <Footer />
       </body>
     </html>
   );
