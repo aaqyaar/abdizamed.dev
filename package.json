@@ -9,8 +9,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.1",
     "@prisma/client": "^4.6.1",
     "formik": "^2.2.9",
+    "graphql": "^16.6.0",
     "gray-matter": "^4.0.3",
     "next": "13.0.2",
     "nodemailer": "^6.8.0",

@@ -24,8 +24,8 @@ export default function Blogs({ data, error }: PropsType) {
           </h2>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
-          {Array.isArray(data?.posts) && data?.posts.length > 0 && !error ? (
-            data?.posts.map((blog: Post, i) => (
+          {Array.isArray(data) && data?.length > 0 && !error ? (
+            data?.map((blog: Post, i) => (
               <article
                 key={i}
                 className="rounded-lg border border-gray-50 p-6 shadow-md shadow-gray-50 dark:border-gray-800 dark:bg-gray-900 dark:shadow-gray-900"
@@ -39,9 +39,22 @@ export default function Blogs({ data, error }: PropsType) {
                 <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   <a href="#">{blog.title}</a>
                 </h2>
-                <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
+                <p
+                  id="limit"
+                  className="mb-5 font-light text-gray-500 dark:text-gray-400"
+                >
                   {blog.excerpt}
                 </p>
+                <style jsx>{`
+                  #limit {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                `}</style>
+
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
                     <Image
