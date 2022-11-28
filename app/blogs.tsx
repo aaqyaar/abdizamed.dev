@@ -17,7 +17,7 @@ const settings = {
   autoplay: true,
   autoplaySpeed: 5000,
 
-  arrows: true,
+  // arrows: true,
 
   responsive: [
     {
@@ -47,11 +47,13 @@ const settings = {
   ],
 };
 
-export default function TestBlogs({ posts }: any) {
+export default function TestBlogs({ posts }: { posts: any }) {
+  const slider = React.useRef<any>(null);
   return (
-    <div className="my-10 mr-4">
+    <div className="relative my-10 mr-4">
       <h2 className="text-3xl font-bold text-green-500">Latest Posts</h2>
-      <Slider {...settings}>
+
+      <Slider {...settings} ref={slider}>
         {posts.map((post: any) => (
           <div className="p-4" key={post.id}>
             <div className="rounded-lg bg-white p-4 shadow-lg shadow-gray-100 dark:bg-gray-800 dark:shadow-gray-900">
