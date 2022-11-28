@@ -36,5 +36,5 @@ export const getPost = async (slug: string) => {
     variables: { slug },
   });
 
-  return { data, loading, error };
+  return { data: data.posts, loading, error };
 };

@@ -59,25 +59,22 @@ export const GET_POSTS = gql`
 // Path: get post
 
 export const GET_POST = gql`
-  query GetPost($slug: slug!) {
-    query
-    getPost(slug: $slug) {
-      post {
+  query GetPost($slug: String!) {
+    posts(where: { slug: $slug }) {
+      id
+      title
+      author
+      excerpt
+      content
+      avatar
+      category
+      createdAt
+      slug
+      tags
+      updatedAt
+      image {
         id
-        title
-        author
-        excerpt
-        content
-        avatar
-        category
-        createdAt
-        slug
-        tags
-        updatedAt
-        image {
-          id
-          url
-        }
+        url
       }
     }
   }

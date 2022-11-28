@@ -12,7 +12,7 @@ type Props = {
   error: any;
 };
 
-export default function BlogList({ posts, error }: Props) {
+export default function BlogsList({ posts, error }: Props) {
   const [search, setSearch] = React.useState("");
 
   const filteredPosts = filteredArray(posts, search);

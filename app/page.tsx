@@ -18,7 +18,6 @@ const HomePage = async () => {
         <About />
         <Projects />
         <Blogs data={posts} error={error} />
-
         <Contact />
       </div>
     </Suspense>
