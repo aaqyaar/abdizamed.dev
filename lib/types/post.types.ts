@@ -6,7 +6,7 @@ export type Post = {
   image: any;
   avatar: string;
   author: string;
-  category: string;
+  category: string[];
   tags: string[];
   content: string[];
 };

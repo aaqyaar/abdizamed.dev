@@ -1,8 +1,10 @@
+"use client";
+
 import type { Post } from "lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { HiArrowLeft, HiArrowRight, HiSearch } from "react-icons/hi";
+import { HiArrowRight, HiSearch } from "react-icons/hi";
 import Grid from "./Grid";
 
 type Props = {
@@ -11,6 +13,10 @@ type Props = {
 };
 
 export default function BlogList({ posts, error }: Props) {
+  const [search, setSearch] = React.useState("");
+
+  const filteredPosts = filteredArray(posts, search);
+
   if (error) {
     return <div>Failed to load {error}</div>;
   }
@@ -34,6 +40,8 @@ export default function BlogList({ posts, error }: Props) {
                   <input
                     className="flex h-full w-full flex-1 rounded-full border-2 px-4 focus:outline-none dark:border-0 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-400"
                     type="text"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search blog posts"
                   />
                   <button className="flex h-full w-12 flex-none rounded-full bg-gray-100 dark:bg-gray-800">
@@ -52,17 +60,30 @@ export default function BlogList({ posts, error }: Props) {
         </div>
 
         <Grid className="mb-20">
-          {posts.map((post: Post, i) => (
-            <div
-              className="mt-10 rounded-lg bg-white shadow-lg shadow-gray-100 dark:bg-gray-800 dark:shadow-gray-900"
-              key={i}
-            >
-              <div className="p-4">
-                <Blogs {...post} />
-              </div>
-            </div>
-          ))}
+          {filteredPosts.length > 0
+            ? filteredPosts.map((post: Post, i) => (
+                <div
+                  className="mt-10 rounded-lg bg-white shadow-lg shadow-gray-100 dark:bg-gray-800 dark:shadow-gray-900"
+                  key={i}
+                >
+                  <div className="p-4">
+                    <Blogs {...post} />
+                  </div>
+                </div>
+              ))
+            : null}
         </Grid>
+
+        {filteredPosts.length === 0 ? (
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-gray-400">
+              No results found
+            </h1>
+            <p className="text-center text-lg text-gray-600">
+              Try searching for something else
+            </p>
+          </div>
+        ) : null}
       </div>
     </div>
   );
@@ -112,3 +133,18 @@ const Blogs = ({ title, excerpt, image, slug }: Post) => {
     </>
   );
 };
+
+function filteredArray(arr: Post[], query: string) {
+  return arr.filter((el) => {
+    return (
+      el.title.toLowerCase().indexOf(query.toLowerCase()) !== -1 ||
+      el.excerpt.toString().toLowerCase().indexOf(query.toLowerCase()) !== -1 ||
+      el.category.filter(
+        (el) => el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+      ).length > 0 ||
+      el.tags.filter(
+        (tag) => tag.toLowerCase().indexOf(query.toLowerCase()) !== -1
+      ).length > 0
+    );
+  });
+}
