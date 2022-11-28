@@ -1,9 +1,10 @@
 "use client";
+
 import type { Post } from "lib/types";
 import { formatDate } from "lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useMemo } from "react";
+import React from "react";
 import { HiOutlineCalendar, HiOutlineUser } from "react-icons/hi";
 import { MdArrowBackIosNew } from "react-icons/md";
 import md from "markdown-it";
@@ -13,11 +14,9 @@ type Props = {
 };
 
 export default function SingleBlog({ post }: Props) {
-  const contentToRender = post.content.join(" ");
-
   return (
     <div className="relative mb-10 w-screen">
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-10 lg:mx-auto lg:max-w-screen-lg">
         <Link
           href={"/blogs"}
           className="my-10 flex items-center text-green-500"
