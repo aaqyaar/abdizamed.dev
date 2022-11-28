@@ -18,6 +18,7 @@ const settings = {
   autoplaySpeed: 5000,
 
   arrows: true,
+
   responsive: [
     {
       breakpoint: 1024,

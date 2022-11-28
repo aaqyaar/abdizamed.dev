@@ -9,6 +9,13 @@
   margin: 0 1rem;
 }
 
+.slick-arrow {
+  z-index: 1;
+
+  /* padding left and right */
+  margin: 0 1rem;
+}
+
 @layer base {
   * {
     box-sizing: border-box;
