@@ -140,7 +140,7 @@ const navigation: NavType[] = [
   },
   {
     title: "Github",
-    path: "https://github.com/abdi-aaqyaar",
+    path: "https://github.com/aaqyaar",
     icon: <FaGithub className="h-5 w-5 text-gray-700 dark:text-green-500" />,
     target: "_blank",
   },
