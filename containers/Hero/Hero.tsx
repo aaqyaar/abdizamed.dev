@@ -33,7 +33,7 @@ export default function Hero() {
             <button className="rounded-md bg-green-500 px-4 py-2 text-green-100 transition delay-150 duration-300 ease-in-out hover:bg-green-600">
               Get In Touch
             </button>
-            <Link href={"/resume.pdf"}>
+            <Link href={"/cv-resume.pdf"}>
               <button className="rounded-md border border-green-500 px-4 py-2 text-gray-900 transition delay-150 duration-300 ease-in-out hover:bg-green-600 hover:text-gray-100 dark:text-green-600 dark:hover:text-gray-50">
                 My Resume
               </button>
