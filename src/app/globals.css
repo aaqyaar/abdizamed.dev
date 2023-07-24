@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Miriam+Libre:regular,700);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Miriam Libre", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
